@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-parcelize")
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10"
 }
 
 android {
@@ -40,6 +42,13 @@ android {
 }
 
 dependencies {
+
+    //Serialization json
+    implementation(libs.kotlinx.serialization.json)
+    //Lottie
+    implementation(libs.lottie.compose)
+    //navigation
+    implementation(libs.androidx.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
